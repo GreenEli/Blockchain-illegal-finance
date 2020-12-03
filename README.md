@@ -25,7 +25,7 @@
 
  ![image](https://github.com/GreenEli/Blockchain-illegal-finance/blob/main/pic/1.png)
  
-2. 将github上的项目代码拷贝下来，并用eclipse编辑器打开该项目（如用IDE编辑器，则需导入相关jar包）
+2. 将笔者的本项目代码clone下来，并用eclipse编辑器打开该项目（如用IDE编辑器，则需导入相关jar包）
 
  ![image](https://github.com/GreenEli/Blockchain-illegal-finance/blob/main/pic/2.png)
  
