@@ -1,59 +1,58 @@
 # Blockchain-illegal-finance
 
-## 工程需求：
-### 作为非法金融防范项目中的区块链组，主要负责将非法金融活动中的可疑活动以区块链的形式保存在大数据集群中，需要符合的要求点如下：
-1. 金融数据量巨大，需要存放在能存储海量大数据的集群中
-2. 对海量原始数据使用区块链的可追溯、防篡改特性进行进一步的改进后二次存储
-3. 可以提供一个便于与用户交互的区块链的可视化界面
+## Engineering requirements:
+### As the blockchain group in the illegal financial prevention project, it is mainly responsible for storing suspicious activities in illegal financial activities in the form of blockchain in the big data cluster. The requirements that need to be met are as follows:
+1. The amount of financial data is huge and needs to be stored in a cluster that can store massive amounts of big data.
+2. The traceability and anti-tampering characteristics of the massive original data using the blockchain are further improved and then stored for the second time.
+3. It can provide a visual interface of the blockchain that facilitates interaction with users
 
-## 项目说明
-- 针对第一点，本项目通过综合取舍，采用基于Hadoop生态的hbase集群进行大规模数据存储。由于Hadoop生态具有显著的map-reduce功能（分布式计算、分布式存储），同时由于Hadoop不能存储小文件的不足，进一步采用能弥补该不足的Hadoop生态上的hbase集群进行存储。
-- 针对第二点，本项目采用Java编程语言对原始数据进行二次加工（原始数据分离、分离数据提取、提取数据密码学处理、处理后数据转存MySQL、HBASE）
-- 针对第三点，本次项目使用基于Tomcat的前端服务器进行处理，采用JavaScript对前端网页进行进一步编程。
+## project instruction
+-Aiming at the first point, this project adopts the hbase cluster based on the Hadoop ecology for large-scale data storage through comprehensive trade-offs, because the Hadoop ecosystem has significant map-reduce functions (distributed computing, distributed storage), and because Hadoop cannot store small files, the hbase cluster in the Hadoop ecosystem that can make up for the shortcomings is further used for storage.
+-For the second point, this project uses the Java programming language to perform secondary processing on the original data (separation of original data, extraction of separated data, cryptographic processing of extracted data, and transfer of processed data to MySQL, HBASE).
+-For the third point, this project uses a Tomcat-based front-end server for processing, and uses JavaScript to further program the front-end web page.
 
-## 准备基础
-1. 本项目应用的数据库有MSQL、HADOOP、HBASE
-2. 本项目应用的编程语言为java
-3. 本项目应用tomcat服务器，采用JavaScript语言进行编程
+## Prepare the basics
+1. The databases used in this project are MSQL, HADOOP, HBASE
+2. The programming language used in this project is java
+3. This project uses tomcat server and uses JavaScript language for programming
 
-## 快速入手使用说明：
-由于当时疫情期间未能返校，而笔记本难以在虚拟机上运行多节点hbase集群，最后经过综合考虑，选择在windows操作系统上运行伪分布式单节点集群。
-本项目使用环境为windows操作系统，采用编程工具为原始ecliipse编辑器
-其中相应数据库版本为mysql：5.6.47；hadoop 2.7.2；hbase 1.3.6
-### 快速入手使用介绍：
-1.成功安装mysql、hadoop、hbase数据库后，将数据库依次打开
+## Quick start instructions:
+Due to the failure to return to school during the epidemic at that time, and it was difficult for the laptop to run a multi-node hbase cluster on a virtual machine, after comprehensive consideration, we chose to run a pseudo-distributed single-node cluster on the windows operating system.
+The use environment of this project is the windows operating system, and the programming tool is the original ecliipse editor.
+The corresponding database version is mysql: 5.6.47; hadoop 2.7.2; hbase 1.3.6.
+### Quick start introduction:
+1. After successfully installing the mysql, hadoop, and hbase databases, open the databases in turn.
 
  ![image](https://github.com/GreenEli/Blockchain-illegal-finance/blob/main/pic/1.png)
  
-2. 将笔者的本项目代码clone下来，并用eclipse编辑器打开该项目（如用IDE编辑器，则需导入相关jar包）
+2. Clone the author's code for this project, and open the project with the eclipse editor (if you use the IDE editor, you need to import the relevant jar package).
 
  ![image](https://github.com/GreenEli/Blockchain-illegal-finance/blob/main/pic/2.png)
  
-3. 在mysql后台建立一个test02数据库，在hbase数据库中建一个表，表名和两个列族信息分别为（Economic_illegal, FileData, Others）
+3. Create a test02 database in the mysql background, and create a table in the hbase database. The table name and two column family information are (Economic_illegal, FileData, Others).
 
  ![image](https://github.com/GreenEli/Blockchain-illegal-finance/blob/main/pic/3.png)
  ![image](https://github.com/GreenEli/Blockchain-illegal-finance/blob/main/pic/3-2.png)
  
-4. 接着执行项目代码中Creatchart.java语句，得到mysql、hbase二次处理数据
+4. Then execute the Creatchart.java statement in the project code to get the secondary processing data of mysql and hbase
 
  ![image](https://github.com/GreenEli/Blockchain-illegal-finance/blob/main/pic/4.png)
  ![image](https://github.com/GreenEli/Blockchain-illegal-finance/blob/main/pic/4-2.png)
  ![image](https://github.com/GreenEli/Blockchain-illegal-finance/blob/main/pic/4-3.png)
  
-5. 安装完Tomcat服务器后打开Tomcat
+5. Open Tomcat after installing Tomcat server.
 
 ![image](https://github.com/GreenEli/Blockchain-illegal-finance/blob/main/pic/5.png)
 
-6. 将源代码中register1.jsp和test1.js导入tomcat主目录下的webapps/ROOT文件夹下
+6. Import register1.jsp and test1.js in the source code into the webapps/ROOT folder under the tomcat home directory
 
  ![image](https://github.com/GreenEli/Blockchain-illegal-finance/blob/main/pic/6.png)
  
-7. 在浏览器输入localhost:8080/register1.jsp,进入前端页面即可
+7. Enter localhost:8080/register1.jsp in the browser and enter the web page
 
 ![image](https://github.com/GreenEli/Blockchain-illegal-finance/blob/main/pic/7-1.png)
 ![image](https://github.com/GreenEli/Blockchain-illegal-finance/blob/main/pic/7-2.png)
 ![image](https://github.com/GreenEli/Blockchain-illegal-finance/blob/main/pic/7-3.png)
  
-### 此外，本项目的后续工作是进一步将项目部署在基于linux服务器版操作系统的完全分布式集群中。
 
 
